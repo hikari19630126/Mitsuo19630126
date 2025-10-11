@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  background: lightgrey;
+  font-weight: bold;
+}
+
+main {
+  margin: 40px auto;
+}
+
+label {
+  font-size: 13px;
+}
+
+#timer, #best {
+  text-align: right;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  background: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.board li {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  background: rgb(58, 58, 239);
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 40px;
+  box-shadow: 0 4px 0 rgb(1, 1, 159);
+  cursor: pointer;
+}
+
+#start {
+  background: red;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  padding: 4px;
+  margin-top: 8px;
+  box-shadow: 0 4px 0 rgb(149, 2, 2);
+  cursor: pointer;
+}
+
+#start:active {
+  transform: translateY(4px);
+  box-shadow: none;
+  user-select: none;
+}
+
+.board li:active {
+  transform: translateY(4px);
+  box-shadow: none;
+  user-select: none;
+}
+
+li.cleared {
+  box-shadow: none;
+  transform: translateY(4px);
+  background: lightgrey;
+}
+
+.unclick {
+  opacity: 0.4;
+  pointer-events: none;
+}

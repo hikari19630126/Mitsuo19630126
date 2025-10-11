@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>数字タッチゲーム</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <label>
+      列×行 の選択
+      <select id="select">
+        <option>-- 列・行を選択して下さい --</option>
+        <option value="2">2 × 2</option>
+        <option value="3">3 × 3</option>
+        <option value="4" selected>4 × 4</option>
+        <option value="5">5 × 5</option>
+        <option value="6">6 × 6</option>
+        <option value="7">7 × 7</option>
+        <option value="8">8 × 8</option>
+        <option value="9">9 × 9</option>
+        <option value="10">10 × 10</option>
+      </select>
+    </label>
+
+    <p id="timer">00:00.00</p>
+    <p id="best">ベストタイム: --:--.--</p>
+    <ul class="board"></ul>
+    <div id="start">START</div>
+
+    <!-- 効果音 -->
+    <audio id="tapSound" src="tap.wav" preload="auto"></audio>
+    <audio id="clearSound" src="clear.mp3" preload="auto"></audio>
+
+    <script src="main.js"></script>
+  </main>
+</body>
+</html>
