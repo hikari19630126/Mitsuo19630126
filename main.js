@@ -97,7 +97,8 @@
       this.currentNumber = 0;
       this.panels.forEach(panel => {
         const li = panel.geteLi();
-        li.onclick = () => {
+        // li.onclick = () => { を修正
+        li.addEventListener('pointerdown', () => {
           if (!li.classList.contains('cleared') &&
               Number(li.textContent) === this.currentNumber + 1) {
             li.classList.add('cleared');
@@ -114,7 +115,7 @@
               select.disabled = false;
             }
           }
-        };
+        });
       });
     }
 
