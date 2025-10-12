@@ -4,6 +4,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
   background: url(halloween-forest_20250924_raw.jpg) center/cover;
+  object-fit: cover;
   /* background-size: 80px 160px; */
   font-weight: bold;
 }
