@@ -3,22 +3,24 @@
 body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
-  background:rgb(183, 231, 249);
+  background: url(halloween-forest_20250924_raw.jpg) center/cover;
+  /* background-size: 80px 160px; */
   font-weight: bold;
 }
 
 main {
-  margin: 40px auto;
+  margin: 120px auto;
 }
 
 label {
   font-size: 13px;
+  color: white;
 }
 
 #timer, #best {
   text-align: right;
   font-weight: bold;
-  margin: 0;
+  margin: 8px 0 0 0;
   color: white;
   margin-bottom: 4px;
 }
