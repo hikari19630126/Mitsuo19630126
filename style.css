@@ -1,16 +1,22 @@
 @charset "utf-8";
 
-body {
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
-  background: url(halloween-forest_20250924_raw.jpg) center/cover;
-  object-fit: cover;
+  background: url(halloween-forest_20250924_raw.jpg) center/cover no-repeat;
+  /* object-fit: cover; */
   /* background-size: 80px 160px; */
   font-weight: bold;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 main {
   margin: 120px auto;
+  
 }
 
 label {
