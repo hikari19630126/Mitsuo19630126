@@ -21,15 +21,19 @@ main {
 
 label {
   font-size: 13px;
-  color: white;
+  color: rgb(90, 50, 9);
 }
 
 #timer, #best {
   text-align: right;
   font-weight: bold;
   margin: 8px 0 0 0;
-  color: white;
+  padding: 0;
+  color: rgb(90, 50, 9);
   margin-bottom: 4px;
+}
+#best {
+  margin: 0;
 }
 
 .board {
@@ -61,7 +65,7 @@ label {
   text-align: center;
   border-radius: 4px;
   padding: 4px;
-  margin-top: 8px;
+  margin-top: 16px;
   box-shadow: 0 4px 0 rgb(149, 2, 2);
   cursor: pointer;
 }
