@@ -4,11 +4,9 @@ html,body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family:'Times New Roman', Times, serif;
   font-size: 16px;
   background: url(halloween-forest_20250924_raw.jpg) center/cover no-repeat;
-  /* object-fit: cover; */
-  /* background-size: 80px 160px; */
   font-weight: bold;
   overflow-x: hidden;
   min-height: 100vh;
@@ -26,7 +24,6 @@ label {
 
 #timer, #best {
   text-align: right;
-  font-weight: bold;
   margin: 8px 0 0 0;
   padding: 0;
   margin-bottom: 4px;
