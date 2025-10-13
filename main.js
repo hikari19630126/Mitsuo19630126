@@ -26,19 +26,20 @@
     constructor() {
       this.board = document.querySelector('.board');
       this.main = document.querySelector('main');
-      this.n = 4;
+      this.n = 3;
       this.currentNumber = 0;
       this.panels = [];
       this.init();
     }
 
     init() {
-      this.createPanels();
-      this.setUp();
-      this.enableClick();
-      this.loadBestTime();
+      this.createPanels(); // li 生成  変数へ代入
+      this.setUp();        // li数に応じてwidthを設定 既li削除、新li追加 classをremove
+      this.enableClick();  // liクリック時、条件に応じて処理
+      this.loadBestTime(); 
     }
 
+    // li 生成  変数へ代入
     createPanels() {
       this.panels = [];
       for (let i = 1; i <= this.n * this.n; i++) {
@@ -46,6 +47,7 @@
       }
     }
 
+    // li数に応じてwidthを設定 既li削除、新li追加 classをremove
     setUp() {
       this.main.style.width = `${50 * this.n + 20}px`;
       while (this.board.firstChild) {
@@ -60,6 +62,7 @@
       });
     }
 
+    // 乱数を生成
     getShuffledNumbers() {
       const numbers = [];
       for (let i = 1; i <= this.n * this.n; i++) {
@@ -74,6 +77,7 @@
       return numbers;
     }
 
+    // 乱数をliへ代入
     startGame() {
       const numbers = this.getShuffledNumbers();
       this.currentNumber = 0;
@@ -85,6 +89,7 @@
       });
     }
 
+    // li数変更時、widthをresize
     reSize(newSize) {
       this.n = Number(newSize);
       this.createPanels();
@@ -93,6 +98,7 @@
       this.loadBestTime();
     }
 
+    // liクリック時、条件に応じて処理
     enableClick() {
       this.currentNumber = 0;
       this.panels.forEach(panel => {
@@ -119,7 +125,7 @@
       });
     }
 
-  
+    // 経過時間の表示
     updateTimer() {
       if (this.currentNumber === this.n * this.n) return;
 
@@ -132,10 +138,12 @@
       clearId = setTimeout(() => this.updateTimer(), 10);
     }
 
+    // 経過時間の計算
     getElapsedTime() {
       return Date.now() - startTime;
     }
 
+    // ベストタイムのチェックと保存
     checkBestTime() {
       const key = `best-${this.n}`;
       const current = this.getElapsedTime();
@@ -147,16 +155,18 @@
       }
     }
 
+    // セットアップ時とリサイズ時 ベストタイムのロード
     loadBestTime() {
       const key = `best-${this.n}`;
       const best = localStorage.getItem(key);
       if (best) {
         this.displayBestTime(parseInt(best));
       } else {
-        bestDisplay.textContent = `ベストタイム: --:--.--`;
+        bestDisplay.textContent = `ベストタイム  --:--.--`;
       }
     }
 
+    // ベストタイムの表示
     displayBestTime(ms) {
       const msPart = String((ms % 1000) / 10 | 0).padStart(2, '0');
       const sec = String(Math.floor(ms / 1000) % 60).padStart(2, '0');
