@@ -2,25 +2,27 @@
 
 html,body {
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   font-family:'Times New Roman', Times, serif;
   font-size: 16px;
-  background: url(halloween-forest_20250924_raw.jpg) center/cover no-repeat;
+  background: url(img/Xmas.jpg) center/cover no-repeat;
   font-weight: bold;
   overflow-x: hidden;
   min-height: 100vh;
+  color: white;
+  background-position: center calc(50%);
+  background-size: 150%;
 }
 
 main {
   margin: 120px auto;
-  
+  color: rgb(82, 94, 107);
 }
 
 label {
   display: block;
   font-size: 13px;
-  color: black;
   padding: 0 0 16px 0;
 }
 
@@ -29,7 +31,6 @@ label {
   margin: 8px 0 0 0;
   padding: 0;
   margin-bottom: 4px;
-  color: black;
 }
 #best {
   margin: 0;
