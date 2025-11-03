@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>数字タッチゲーム</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Touch Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <label>
-      列×行 の 選択
-      <select id="select">
-        <option value="" disabled selected hidden> 列・行の選択して下さい </option>
+  <main class="container">
+    <h1>Number Touch Game</h1>
+
+    <div class="controls">
+      <label for="grid-size">行・列の選択：</label>
+      <select id="grid-size">
+        <option hidden>列/行を選択して下さい</option>
         <option value="3">3 × 3</option>
         <option value="4">4 × 4</option>
         <option value="5">5 × 5</option>
         <option value="6">6 × 6</option>
       </select>
-    </label>
-    <p id="timer">00:00.00</p>
-    <p id="best">ベストタイム  --:--.--</p>
-    <ul class="board"></ul>
-    <div id="start">START</div>
+    </div>
 
-    <!-- 効果音 -->
-    <audio id="tapSound" src="wav/tap.wav" preload="auto"></audio>
-    <audio id="clearSound" src="wav/clear.mp3" preload="auto"></audio>
+    <div class="status">
+      <div class="time">TIME：<span id="timer">00:00.00</span></div>
+      <div class="best">BEST：<span id="best-time">--:--.--</span></div>
+    </div>
 
-    <script src="main.js"></script>
+    <ul class="board" id="board" data-size="3"></ul>
+
+    <button id="start-btn">START</button>
+
+    <!-- CLEAR Overlay -->
+    <div class="overlay hidden" id="overlay">
+      <div class="clear-message">
+        <h2>🎉 CLEAR! 🎉</h2>
+        <p id="result-time"></p>
+      </div>
+      <canvas id="fireworks"></canvas>
+    </div>
   </main>
+
+  <!-- サウンド -->
+  <audio id="clearSound" src="wav/clear.mp3" preload="auto"></audio>
+  <audio id="tapSound" src="wav/tap.wav" preload="auto"></audio>
+  <audio id="startSound" src="wav/start.wav" preload="auto"></audio>
+
+  <script src="main.js"></script>
 </body>
 </html>
